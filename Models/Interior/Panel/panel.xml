@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+   <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+    <object-name>console</object-name>
+    <object-name>volantG</object-name>
+    <object-name>volantD</object-name>
+    <object-name>trimprof</object-name>
+    <object-name>trimail</object-name>
+    <object-name>boite</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+<!--
+  <animation>
+    <type>select</type>
+    <object-name>volantG</object-name>
+    <object-name>volantD</object-name>
+    <condition>
+      <or>
+        <not-equals>
+          <property>sim/current-view/view-number</property>
+          <value>0</value>
+        </not-equals>
+        <not>
+          <property>sim/model/hide-yoke</property>
+        </not>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>volantG</object-name>
+    <property>/surface-positions/elevator-pos-norm</property>
+    <factor> -0.12 </factor>
+    <axis>
+      <x> 0.156735 </x>
+      <y> 0.000000 </y>
+      <z> 0.013713 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>volantD</object-name>
+    <property>/surface-positions/elevator-pos-norm</property>
+    <factor> -0.12 </factor>
+    <axis>
+      <x> 0.156735 </x>
+      <y> 0.000000 </y>
+      <z> 0.013713 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>volantG</object-name>
+    <property>/surface-positions/left-aileron-pos-norm</property>
+    <factor> 60 </factor>
+    <center>
+      <x-m>  0.159052 </x-m>
+      <y-m> -0.397167 </y-m>
+      <z-m>  0.012765 </z-m>
+    </center>
+    <axis>
+      <x> -0.313471 </x>
+      <y>  0.000000 </y>
+      <z> -0.027425 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>volantD</object-name>
+    <property>/surface-positions/left-aileron-pos-norm</property>
+    <factor> 60 </factor>
+    <center>
+      <x-m> 0.159052 </x-m>
+      <y-m> 0.397167 </y-m>
+      <z-m> 0.012765 </z-m>
+    </center>
+    <axis>
+      <x> -0.313471 </x>
+      <y>  0.000000 </y>
+      <z> -0.027425 </z>
+    </axis>
+  </animation>
+-->
+
+  <!-- ALT -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  0.255 </x-m>
+      <y-m> -0.463 </y-m>
+      <z-m> -0.126 </z-m>
+    </offsets>
+  </model>
+
+  <!-- AI -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m>  0.255 </x-m>
+      <y-m> -0.350 </y-m>
+      <z-m> -0.126 </z-m>
+    </offsets>
+  </model>
+
+  <!-- VSI -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m>  0.255 </x-m>
+      <y-m> -0.232 </y-m>
+      <z-m> -0.126 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ASI -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.255 </x-m>
+      <y-m> -0.463 </y-m>
+      <z-m> -0.245 </z-m>
+    </offsets>
+  </model>
+
+  <!-- COMPASS -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>  0.255 </x-m>
+      <y-m> -0.350 </y-m>
+      <z-m> -0.245 </z-m>
+    </offsets>
+  </model>
+
+  <!-- TURN -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m>  0.251 </x-m>
+      <y-m> -0.231 </y-m>
+      <z-m> -0.247 </z-m>
+    </offsets>
+  </model>
+
+  <!-- FLAPS
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/flaps/flaps.xml</path>
+    <offsets>
+      <x-m>  0.016 </x-m>
+      <y-m>  0.005 </y-m>
+      <z-m> -0.008 </z-m>
+    </offsets>
+  </model> -->
+
+  <!-- MAN Engine 1 -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/man/man0.xml</path>
+    <offsets>
+      <x-m>  0.240 </x-m>
+      <y-m> -0.104 </y-m>
+      <z-m>  0.094 </z-m>
+    </offsets>
+  </model>
+
+  <!-- MAN Engine 2 -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/man/man1.xml</path>
+    <offsets>
+      <x-m> 0.240 </x-m>
+      <y-m> 0.006 </y-m>
+      <z-m> 0.094 </z-m>
+    </offsets>
+  </model>
+
+  <!-- MAN Engine 3 -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/man/man2.xml</path>
+    <offsets>
+      <x-m> 0.240 </x-m>
+      <y-m> 0.106 </y-m>
+      <z-m> 0.094 </z-m>
+    </offsets>
+  </model>
+
+  <!-- MAN Engine 4 -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/man/man3.xml</path>
+    <offsets>
+      <x-m> 0.240 </x-m>
+      <y-m> 0.206 </y-m>
+      <z-m> 0.094 </z-m>
+    </offsets>
+  </model>
+
+  <!-- RPM Engine 1 -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/rpm/rpm0.xml</path>
+    <offsets>
+      <x-m>  0.240 </x-m>
+      <y-m> -0.104 </y-m>
+      <z-m>  0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- RPM Engine 2 -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/rpm/rpm1.xml</path>
+    <offsets>
+      <x-m> 0.240 </x-m>
+      <y-m> 0.006 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- RPM Engine 3 -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/rpm/rpm2.xml</path>
+    <offsets>
+      <x-m> 0.240 </x-m>
+      <y-m> 0.106 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- RPM Engine 4 -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/rpm/rpm3.xml</path>
+    <offsets>
+      <x-m> 0.240 </x-m>
+      <y-m> 0.206 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- RADIO COMPASS -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/Interior/Panel/Instruments/radio-compass/radio-compass.xml</path>
+    <offsets>
+      <x-m>  0.240 </x-m>
+      <y-m>  0.470 </y-m>
+      <z-m> -0.121 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+

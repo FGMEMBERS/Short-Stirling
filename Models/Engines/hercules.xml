@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>hercules.ac</path>
+
+  <animation>
+    <object-name>hercules</object-name>
+
+    <!-- transparent objects -->
+  </animation>
+
+</PropertyList>
+

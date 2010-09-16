@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New sounds kit by StuartC : http://www.fguk.co.nr/ -->
  
 <PropertyList>
 
-    <fx>
+  <fx>
 
     <!-- Moteur 1 -->
     <crank>
       <name>engstart</name>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <property>/engines/engine[0]/cranking</property>
       <volume>
         <offset>-0.4</offset>
@@ -19,7 +21,7 @@
     <crank>
       <name>crank</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <condition>
         <property>/engines/engine[0]/cranking</property>
         <not>
@@ -39,7 +41,7 @@
 
     <crank>
       <name>cough</name>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <property>/engines/engine[0]/running</property>
       <volume>
         <offset>-0.50</offset>
@@ -52,29 +54,39 @@
       <max-dist>1000</max-dist>
     </crank>
 
-    <engine>
-      <name>engine</name>
+    
+    <engine> 
+      <name>engine idle rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/running.wav</path>
-      <condition>
-        <property>/engines/engine[0]/running</property>
-        <less-than>
-          <property>/engines/engine[0]/rpm</property>
-          <value>5000</value>
+      <path>Aircraft/Short-Stirling/Sounds/idle.wav</path>
+      <condition> 
+        <property>/engines/engine/running</property>
+        <less-than> 
+          <property>/engines/engine/rpm</property>
+          <value>1500</value>
         </less-than>
+        <greater-than> 
+          <property>/engines/engine/rpm</property>
+          <value>150</value>
+        </greater-than>
       </condition>
-      <volume>
-        <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.2</min>
-        <max>1.0</max>
-        <offset>0.0</offset>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
       </volume>
-      <pitch>
-        <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.0</max>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine/rpm</property>
+        <factor>0.0009496</factor>
+        <min>0.6</min>
+        <max>2.0</max>
+        <offset>0</offset>
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -83,13 +95,13 @@
     <engine>
       <name>enginerun</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/running.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/ext-cruse.wav</path>
       <condition>
         <property>/engines/engine[0]/running</property>
-        <greater-than>
+        <greater-than-equals>
           <property>/engines/engine[0]/rpm</property>
-          <value>400</value>
-        </greater-than>
+          <value>1500</value>
+        </greater-than-equals>
       </condition>
       <volume>
         <property>/engines/engine[0]/rpm</property>
@@ -111,7 +123,7 @@
     <!-- Moteur 2 -->
     <crank>
       <name>engstart</name>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <property>/engines/engine[1]/cranking</property>
       <volume>
         <offset>-0.4</offset>
@@ -123,7 +135,7 @@
     <crank>
       <name>crank</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <condition>
         <property>/engines/engine[1]/cranking</property>
         <not>
@@ -143,7 +155,7 @@
 
     <crank>
       <name>cough</name>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <property>/engines/engine[1]/running</property>
       <volume>
         <offset>-0.50</offset>
@@ -156,29 +168,38 @@
       <max-dist>1000</max-dist>
     </crank>
 
-    <engine>
-      <name>engine</name>
+    <engine> 
+      <name>engine idle rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/running.wav</path>
-      <condition>
-        <property>/engines/engine[1]/running</property>
-        <less-than>
-          <property>/engines/engine[1]/rpm</property>
-          <value>5000</value>
+      <path>Aircraft/Short-Stirling/Sounds/idle.wav</path>
+      <condition> 
+        <property>/engines/engine/running</property>
+        <less-than> 
+          <property>/engines/engine/rpm</property>
+          <value>1500</value>
         </less-than>
+        <greater-than> 
+          <property>/engines/engine/rpm</property>
+          <value>150</value>
+        </greater-than>
       </condition>
-      <volume>
-        <property>/engines/engine[1]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.2</min>
-        <max>1.0</max>
-        <offset>0.0</offset>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
       </volume>
-      <pitch>
-        <property>/engines/engine[1]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.0</max>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine/rpm</property>
+        <factor>0.0009496</factor>
+        <min>0.6</min>
+        <max>2.0</max>
+        <offset>0</offset>
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -187,23 +208,23 @@
     <engine>
       <name>enginerun</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/running.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/ext-cruse.wav</path>
       <condition>
-        <property>/engines/engine[1]/running</property>
-        <greater-than>
-          <property>/engines/engine[1]/rpm</property>
-          <value>400</value>
-        </greater-than>
+        <property>/engines/engine[0]/running</property>
+        <greater-than-equals>
+          <property>/engines/engine[0]/rpm</property>
+          <value>1500</value>
+        </greater-than-equals>
       </condition>
       <volume>
-        <property>/engines/engine[1]/rpm</property>
+        <property>/engines/engine[0]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.00</max>
         <offset>0.0</offset>
       </volume>
       <pitch>
-        <property>/engines/engine[1]/rpm</property>
+        <property>/engines/engine[0]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.0</max>
@@ -215,7 +236,7 @@
     <!-- Moteur 3 -->
     <crank>
       <name>engstart</name>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <property>/engines/engine[2]/cranking</property>
       <volume>
         <offset>-0.4</offset>
@@ -227,7 +248,7 @@
     <crank>
       <name>crank</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <condition>
         <property>/engines/engine[2]/cranking</property>
         <not>
@@ -247,7 +268,7 @@
 
     <crank>
       <name>cough</name>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <property>/engines/engine[2]/running</property>
       <volume>
         <offset>-0.50</offset>
@@ -260,29 +281,38 @@
       <max-dist>1000</max-dist>
     </crank>
 
-    <engine>
-      <name>engine</name>
+   <engine> 
+      <name>engine idle rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/running.wav</path>
-      <condition>
-        <property>/engines/engine[2]/running</property>
-        <less-than>
-          <property>/engines/engine[2]/rpm</property>
-          <value>5000</value>
+      <path>Aircraft/Short-Stirling/Sounds/idle.wav</path>
+      <condition> 
+        <property>/engines/engine/running</property>
+        <less-than> 
+          <property>/engines/engine/rpm</property>
+          <value>1500</value>
         </less-than>
+        <greater-than> 
+          <property>/engines/engine/rpm</property>
+          <value>150</value>
+        </greater-than>
       </condition>
-      <volume>
-        <property>/engines/engine[2]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.2</min>
-        <max>1.0</max>
-        <offset>0.0</offset>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
       </volume>
-      <pitch>
-        <property>/engines/engine[2]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.0</max>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine/rpm</property>
+        <factor>0.0009496</factor>
+        <min>0.6</min>
+        <max>2.0</max>
+        <offset>0</offset>
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -291,23 +321,23 @@
     <engine>
       <name>enginerun</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/running.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/ext-cruse.wav</path>
       <condition>
-        <property>/engines/engine[2]/running</property>
-        <greater-than>
-          <property>/engines/engine[2]/rpm</property>
-          <value>400</value>
-        </greater-than>
+        <property>/engines/engine[0]/running</property>
+        <greater-than-equals>
+          <property>/engines/engine[0]/rpm</property>
+          <value>1500</value>
+        </greater-than-equals>
       </condition>
       <volume>
-        <property>/engines/engine[2]/rpm</property>
+        <property>/engines/engine[0]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.00</max>
         <offset>0.0</offset>
       </volume>
       <pitch>
-        <property>/engines/engine[2]/rpm</property>
+        <property>/engines/engine[0]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.0</max>
@@ -319,7 +349,7 @@
     <!-- Moteur 4 -->
     <crank>
       <name>engstart</name>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <property>/engines/engine[3]/cranking</property>
       <volume>
         <offset>-0.4</offset>
@@ -331,7 +361,7 @@
     <crank>
       <name>crank</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <condition>
         <property>/engines/engine[3]/cranking</property>
         <not>
@@ -351,7 +381,7 @@
 
     <crank>
       <name>cough</name>
-      <path>Aircraft/Short-Stirling/Sounds/starter.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/start.wav</path>
       <property>/engines/engine[3]/running</property>
       <volume>
         <offset>-0.50</offset>
@@ -364,29 +394,38 @@
       <max-dist>1000</max-dist>
     </crank>
 
-    <engine>
-      <name>engine</name>
+    <engine> 
+      <name>engine idle rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/running.wav</path>
-      <condition>
-        <property>/engines/engine[3]/running</property>
-        <less-than>
-          <property>/engines/engine[3]/rpm</property>
-          <value>5000</value>
+      <path>Aircraft/Short-Stirling/Sounds/idle.wav</path>
+      <condition> 
+        <property>/engines/engine/running</property>
+        <less-than> 
+          <property>/engines/engine/rpm</property>
+          <value>1500</value>
         </less-than>
+        <greater-than> 
+          <property>/engines/engine/rpm</property>
+          <value>150</value>
+        </greater-than>
       </condition>
-      <volume>
-        <property>/engines/engine[3]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.2</min>
-        <max>1.0</max>
-        <offset>0.0</offset>
+      <volume> 
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
       </volume>
-      <pitch>
-        <property>/engines/engine[3]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.0</max>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine/rpm</property>
+        <factor>0.0009496</factor>
+        <min>0.6</min>
+        <max>2.0</max>
+        <offset>0</offset>
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -395,23 +434,23 @@
     <engine>
       <name>enginerun</name>
       <mode>looped</mode>
-      <path>Aircraft/Short-Stirling/Sounds/running.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/ext-cruse.wav</path>
       <condition>
-        <property>/engines/engine[3]/running</property>
-        <greater-than>
-          <property>/engines/engine[3]/rpm</property>
-          <value>400</value>
-        </greater-than>
+        <property>/engines/engine[0]/running</property>
+        <greater-than-equals>
+          <property>/engines/engine[0]/rpm</property>
+          <value>1500</value>
+        </greater-than-equals>
       </condition>
       <volume>
-        <property>/engines/engine[3]/rpm</property>
+        <property>/engines/engine[0]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.00</max>
         <offset>0.0</offset>
       </volume>
       <pitch>
-        <property>/engines/engine[3]/rpm</property>
+        <property>/engines/engine[0]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.0</max>
@@ -443,7 +482,7 @@
     <gear>
       <name>gear</name>
       <mode>in-transit</mode>
-      <path>Sounds/gear.wav</path>
+      <path>Aircraft/Short-Stirling/Sounds/gear.wav</path>
       <property>/gear/gear[0]/position-norm</property>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>

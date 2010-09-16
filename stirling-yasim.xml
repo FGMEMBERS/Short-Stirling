@@ -99,8 +99,8 @@
            length="5.282"
            sweep="4"
            taper="0.6">
-           <stall aoa="12" width="6" peak="1.5"/>
-           <flap0 start="0" end="0.95" lift="2.1" drag="2.3"/>
+           <stall aoa="12" width="2" peak="1.5"/>
+           <flap0 start="0" end="0.95" lift="1.33" drag="1.5"/>
 
            <control-input axis="/controls/flight/elevator" control="FLAP0"/>
            <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
@@ -265,7 +265,7 @@
           retract-time="5"
           spring="1.0"
           damp="1.50">
-          <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/>
+          <control-input axis="/controls/flight/rudder" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="0.8" dst1="-0.8"/>
           <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
           <control-speed control="EXTEND" transition-time="5"/>
           <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>

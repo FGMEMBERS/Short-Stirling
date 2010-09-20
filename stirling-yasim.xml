@@ -15,7 +15,7 @@
 
 <airplane mass="44000">
 
-    <approach speed="80" aoa="3" fuel="0.3">
+    <approach speed="80" aoa="4" fuel="0.3">
       <control-setting axis="/controls/engines/engine[0]/throttle" value="0.5"/>
       <control-setting axis="/controls/engines/engine[1]/throttle" value="0.5"/>
       <control-setting axis="/controls/engines/engine[2]/throttle" value="0.5"/>
@@ -77,8 +77,8 @@
           taper="0.40"
           dihedral="4"
           sweep="-3"
-          camber="0.005">
-          <stall aoa="12" width="8" peak="3.5"/>
+          camber="0.01">
+          <stall aoa="14" width="8" peak="3.5"/>
           <flap0 start="0.023" end="0.527" lift="1.8" drag="1.6"/>
           <flap1 start="0.536" end="0.925" lift="1.6" drag="1.1"/>
 
@@ -275,8 +275,7 @@
     <tank x="2.466" y="-4.817" z="0.436" capacity="2000"/>
 
     <!-- CG Theorique : x="1.738" y="0.903" z="0.180" -->
-    <ballast x="12" y="0" z="-9" mass="7000"/>
-    <ballast x="0" y="0" z="0" mass="-2000"/> -->
+    <ballast x="12" y="0" z="-9" mass="4000"/>
 
 </airplane>
 

@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-************************************************************************
-Short stirling
-
-September 2010 BARANGER Emmanuel
-************************************************************************
--->
 
 <PropertyList include="stirling-base.xml">
 

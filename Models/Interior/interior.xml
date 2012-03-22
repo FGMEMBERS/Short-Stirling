@@ -13,14 +13,18 @@
     <object-name>inttourelleavant</object-name>
     <object-name>inttourellecentre</object-name>
     <object-name>inttourellearriere</object-name>
+    <object-name>intporteG</object-name>
+    <object-name>inttourporteG</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
+    <object-name>intvitreG</object-name>
   </animation>
 
   <animation>
     <type>noshadow</type>
     <object-name>intvitres</object-name>
+    <object-name>intvitreG</object-name>
   </animation>
 
   <animation>
@@ -28,6 +32,7 @@
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>intvitres</object-name>
+    <object-name>intvitreG</object-name>
   </animation>
 
   <!-- Pilote -->
@@ -37,9 +42,6 @@
       <x-m> -9.699 </x-m>
       <y-m> -0.296 </y-m>
       <z-m>  0.784 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -50,11 +52,30 @@
       <x-m> -10.626 </x-m>
       <y-m>   0.000 </y-m>
       <z-m>   0.854 </z-m>
-      <roll-deg>     0 </roll-deg>
-      <pitch-deg>    0 </pitch-deg>
-      <heading-deg>  0 </heading-deg>
     </offsets>
   </model>
 
-</PropertyList>
+  <!-- Ouverture de la porte coté gauche -->
+  <animation>
+    <name>IntPorteGauche</name>
+    <object-name>intporteG</object-name>
+    <object-name>inttourporteG</object-name>
+    <object-name>intvitreG</object-name>
+  </animation>
 
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteGauche</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <factor> 170 </factor>
+    <axis>
+      <x1-m>  7.958 </x1-m>
+      <y1-m> -0.806 </y1-m>
+      <z1-m> -0.798 </z1-m>
+      <x2-m>  7.837 </x2-m>
+      <y2-m> -0.812 </y2-m>
+      <z2-m>  0.350 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>

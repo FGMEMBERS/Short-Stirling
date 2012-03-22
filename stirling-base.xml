@@ -4,11 +4,11 @@
 
   <sim include="Nasal/views.xml">
  
-    <author>BARANGER Emmanuel (3D)</author>
-    <aircraft-version>0.1</aircraft-version>
+    <author>BARANGER Emmanuel (3D/FDM), StuartC (FDM/System)</author>
+    <aircraft-version>0.2</aircraft-version>
     <status>Alpha</status>
    
-    <fuel-fraction>0.8</fuel-fraction>
+    <fuel-fraction>1</fuel-fraction>
   
     <startup>
       <splash-texture>Aircraft/Short-Stirling/stirling-splash.png</splash-texture>
@@ -20,27 +20,52 @@
         <file type="string">default</file>
       </livery>
     </model>
-<!--
+	
+    <systems>
+      <!-- 
+      <autopilot>
+        <path>Aircraft/Short-Stirling/Systems/autopilot3.xml</path>
+      </autopilot>
+      -->
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>  
+      <refuel>
+        <type>probe</type>
+        <serviceable type="bool">true</serviceable>
+      </refuel>	  
+    </systems> 
+
+    <!--
     <submodels>
       <serviceable type="bool">true</serviceable>
       <path>Aircraft/Short-Stirling/Models/weapons/release.xml</path>
     </submodels>
--->
+    -->
+    
     <sound>
       <path>Aircraft/Short-Stirling/Sounds/stirling-sound.xml</path>
     </sound>
 
     <multiplay>
       <chat_display>1</chat_display>
-      <generic>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
         <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
+        <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
+        <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
+        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
 
@@ -105,11 +130,12 @@
   </input>
  
   <nasal>
-    <stirling>
+    <doors>
       <file>Aircraft/Short-Stirling/Nasal/doors.nas</file>
+    </doors>
+    <stirling>
       <file>Aircraft/Short-Stirling/Nasal/liveries.nas</file>
     </stirling>
   </nasal>
 
 </PropertyList>
-

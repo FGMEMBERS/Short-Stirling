@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Short-Stirling/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -24,35 +38,18 @@
     <object-name>voletD</object-name>
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
-    <object-name>roueA</object-name>
     <object-name>porteGE</object-name>
     <object-name>porteGI</object-name>
-    <object-name>entreaxesG</object-name>
-    <object-name>gardeboueG</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGH2</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
     <object-name>porteDE</object-name>
     <object-name>porteDI</object-name>
-    <object-name>entreaxesD</object-name>
-    <object-name>gardeboueD</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDH2</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>roueD</object-name>
     <object-name>ailes2</object-name>
     <object-name>profondeur</object-name>
     <object-name>direction</object-name>
     <object-name>moteursE</object-name>
     <object-name>moteursI</object-name>
-    <object-name>heliceGE</object-name>
     <object-name>bolGE</object-name>
-    <object-name>heliceGI</object-name>
     <object-name>bolGI</object-name>
-    <object-name>heliceDI</object-name>
     <object-name>bolDI</object-name>
-    <object-name>heliceDE</object-name>
     <object-name>bolDE</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourelleavant</object-name>
@@ -61,11 +58,32 @@
     <object-name>antennes</object-name>
     <object-name>sousnez</object-name>
     <object-name>airs</object-name>
+    <object-name>porteG</object-name>
+
+    <object-name>echappes</object-name>
+    <object-name>roueA</object-name>
+    <object-name>entreaxesG</object-name>
+    <object-name>gardeboueG</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGH2</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>entreaxesD</object-name>
+    <object-name>gardeboueD</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDH2</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>heliceGE</object-name>
+    <object-name>heliceGI</object-name>
+    <object-name>heliceDI</object-name>
+    <object-name>heliceDE</object-name>
     <object-name>guns</object-name>
     <object-name>trous</object-name>
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
+    <object-name>vitreG</object-name>
     <object-name>cables</object-name>
     <object-name>propblurGE</object-name>
     <object-name>propdiscGE</object-name>
@@ -88,35 +106,18 @@
     <object-name>voletD</object-name>
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
-    <object-name>roueA</object-name>
     <object-name>porteGE</object-name>
     <object-name>porteGI</object-name>
-    <object-name>entreaxesG</object-name>
-    <object-name>gardeboueG</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGH2</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
     <object-name>porteDE</object-name>
     <object-name>porteDI</object-name>
-    <object-name>entreaxesD</object-name>
-    <object-name>gardeboueD</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDH2</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>roueD</object-name>
     <object-name>ailes2</object-name>
     <object-name>profondeur</object-name>
     <object-name>direction</object-name>
     <object-name>moteursE</object-name>
     <object-name>moteursI</object-name>
-    <object-name>heliceGE</object-name>
     <object-name>bolGE</object-name>
-    <object-name>heliceGI</object-name>
     <object-name>bolGI</object-name>
-    <object-name>heliceDI</object-name>
     <object-name>bolDI</object-name>
-    <object-name>heliceDE</object-name>
     <object-name>bolDE</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourelleavant</object-name>
@@ -125,6 +126,26 @@
     <object-name>antennes</object-name>
     <object-name>sousnez</object-name>
     <object-name>airs</object-name>
+    <object-name>porteG</object-name>
+
+    <object-name>echappes</object-name>
+    <object-name>roueA</object-name>
+    <object-name>entreaxesG</object-name>
+    <object-name>gardeboueG</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGH2</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>entreaxesD</object-name>
+    <object-name>gardeboueD</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDH2</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>heliceGE</object-name>
+    <object-name>heliceGI</object-name>
+    <object-name>heliceDI</object-name>
+    <object-name>heliceDE</object-name>
     <object-name>guns</object-name>
     <object-name>trous</object-name>
 
@@ -182,6 +203,10 @@
     <object-name>direction</object-name>
     <object-name>moteursE</object-name>
     <object-name>moteursI</object-name>
+    <object-name>bolGE</object-name>
+    <object-name>bolGI</object-name>
+    <object-name>bolDI</object-name>
+    <object-name>bolDE</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourelleavant</object-name>
     <object-name>tourellecentre</object-name>
@@ -189,6 +214,7 @@
     <object-name>antennes</object-name>
     <object-name>sousnez</object-name>
     <object-name>airs</object-name>
+    <object-name>porteG</object-name>
   </effect>
 
   <animation>
@@ -196,11 +222,13 @@
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>vitres</object-name>
+    <object-name>vitreG</object-name>
   </animation>
 
   <animation>
     <type>noshadow</type>
     <object-name>vitres</object-name>
+    <object-name>vitreG</object-name>
     <object-name>cables</object-name>
     <object-name>propblurGE</object-name>
     <object-name>propdiscGE</object-name>
@@ -212,14 +240,19 @@
     <object-name>propdiscGE</object-name>
   </animation>
 
+  <!-- Une ombre pour OSG en attendant Rembrandt -->
+  <model>
+    <path>Aircraft/Short-Stirling/Models/shadow.xml</path>
+    <offsets>
+      <x-m> -0.121 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -3.802 </z-m>
+    </offsets>
+  </model>
+
   <!-- Intérieur -->
   <model>
     <path>Aircraft/Short-Stirling/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
   </model>
 
   <!-- Effets sur le sol -->
@@ -256,41 +289,41 @@
   <!-- Cranking effects -->
   <!-- Left exterior-->
   <model>
-    <path>Aircraft/Short-Stirling/Models/Effects/cranking/cranking.xml</path>
+    <path>Aircraft/Short-Stirling/Models/Effects/cranking/crankingLE.xml</path>
     <offsets>
-      <x-m> -6.618 </x-m>
-      <y-m> -7.153 </y-m>
-      <z-m>  0.774 </z-m>
+      <x-m> -6.418 </x-m>
+      <y-m> -7.044 </y-m>
+      <z-m>  0.827 </z-m>
     </offsets>
   </model>
 
   <!-- Left interior-->
   <model>
-    <path>Aircraft/Short-Stirling/Models/Effects/cranking/cranking.xml</path>
+    <path>Aircraft/Short-Stirling/Models/Effects/cranking/crankingLI.xml</path>
     <offsets>
-      <x-m> -7.257 </x-m>
-      <y-m> -3.085 </y-m>
-      <z-m>  0.312 </z-m>
+      <x-m> -7.057 </x-m>
+      <y-m> -2.977 </y-m>
+      <z-m>  0.364 </z-m>
     </offsets>
   </model>
 
   <!-- Right interior-->
   <model>
-    <path>Aircraft/Short-Stirling/Models/Effects/cranking/cranking.xml</path>
+    <path>Aircraft/Short-Stirling/Models/Effects/cranking/crankingRI.xml</path>
     <offsets>
-      <x-m> -7.257 </x-m>
-      <y-m>  4.724 </y-m>
-      <z-m>  0.312 </z-m>
+      <x-m> -7.057 </x-m>
+      <y-m>  4.832 </y-m>
+      <z-m>  0.364 </z-m>
     </offsets>
   </model>
 
   <!-- Right exterior-->
   <model>
-    <path>Aircraft/Short-Stirling/Models/Effects/cranking/cranking.xml</path>
+    <path>Aircraft/Short-Stirling/Models/Effects/cranking/crankingRE.xml</path>
     <offsets>
-      <x-m> -6.618 </x-m>
-      <y-m>  8.724 </y-m>
-      <z-m>  0.774 </z-m>
+      <x-m> -6.418 </x-m>
+      <y-m>  8.832 </y-m>
+      <z-m>  0.827 </z-m>
     </offsets>
   </model>
 
@@ -299,7 +332,7 @@
   <model>
     <path>Aircraft/Short-Stirling/Models/Engines/hercules.xml</path>
     <offsets>
-      <x-m> -7.369 </x-m>
+      <x-m> -7.209 </x-m>
       <y-m> -7.939 </y-m>
       <z-m>  0.372 </z-m>
     </offsets>
@@ -309,7 +342,7 @@
   <model>
     <path>Aircraft/Short-Stirling/Models/Engines/hercules.xml</path>
     <offsets>
-      <x-m> -7.993 </x-m>
+      <x-m> -7.833 </x-m>
       <y-m> -3.910 </y-m>
       <z-m> -0.014 </z-m>
     </offsets>
@@ -319,7 +352,7 @@
   <model>
     <path>Aircraft/Short-Stirling/Models/Engines/hercules.xml</path>
     <offsets>
-      <x-m> -7.993 </x-m>
+      <x-m> -7.833 </x-m>
       <y-m>  3.910 </y-m>
       <z-m> -0.014 </z-m>
     </offsets>
@@ -329,7 +362,7 @@
   <model>
     <path>Aircraft/Short-Stirling/Models/Engines/hercules.xml</path>
     <offsets>
-      <x-m> -7.369 </x-m>
+      <x-m> -7.209 </x-m>
       <y-m>  7.939 </y-m>
       <z-m>  0.372 </z-m>
     </offsets>
@@ -1193,6 +1226,28 @@
       <x>  0 </x>
       <y> -1 </y>
       <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Ouverture de la porte coté gauche -->
+  <animation>
+    <name>PorteGauche</name>
+    <object-name>porteG</object-name>
+    <object-name>vitreG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PorteGauche</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <factor> 170 </factor>
+    <axis>
+      <x1-m>  7.958 </x1-m>
+      <y1-m> -0.806 </y1-m>
+      <z1-m> -0.798 </z1-m>
+      <x2-m>  7.837 </x2-m>
+      <y2-m> -0.812 </y2-m>
+      <z2-m>  0.350 </z2-m>
     </axis>
   </animation>
 

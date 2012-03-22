@@ -7,7 +7,7 @@
     <desc>Bomb bay door</desc>
     <binding>
       <command>nasal</command>
-      <script>stirling.doorsystem.crewexport();</script>
+      <script>doors.doorsystem.crewexport();</script>
     </binding>
   </key>
 

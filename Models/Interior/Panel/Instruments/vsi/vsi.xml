@@ -29,10 +29,10 @@
     <object-name>face</object-name>
     <object-name>needle</object-name>
     <emission>
-      <red>   0.75 </red>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
@@ -56,11 +56,6 @@
       <y>  0 </y>
       <z>  0 </z>
     </axis>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
   </animation>
 
 </PropertyList>

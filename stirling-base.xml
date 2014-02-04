@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-  <sim include="Nasal/views.xml">
- 
+  <sim include="Systems/views.xml">
+
     <author>BARANGER Emmanuel (3D/FDM), StuartC (FDM/System)</author>
     <aircraft-version>0.2</aircraft-version>
     <status>Alpha</status>
-   
+
     <fuel-fraction>1</fuel-fraction>
-  
+
     <startup>
       <splash-texture>Aircraft/Short-Stirling/stirling-splash.png</splash-texture>
     </startup>
@@ -20,7 +20,7 @@
         <file type="string">default</file>
       </livery>
     </model>
-	
+
     <systems>
       <!-- 
       <autopilot>
@@ -42,7 +42,7 @@
       <path>Aircraft/Short-Stirling/Models/weapons/release.xml</path>
     </submodels>
     -->
-    
+
     <sound>
       <path>Aircraft/Short-Stirling/Sounds/stirling-sound.xml</path>
     </sound>
@@ -59,23 +59,29 @@
         <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
         <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
         <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
-        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
         <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
-        <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
-        <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
-        <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
-        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
+        <float n="3" alias="/position/altitude-ft"> 0 </float>                     <!-- altitude for Smoke/Trail -->
+        <float n="4" alias="/engines/engine[0]/cranking"/>
+        <float n="5" alias="/engines/engine[1]/cranking"/>
+        <float n="6" alias="/engines/engine[2]/cranking"/>
+        <float n="7" alias="/engines/engine[3]/cranking"/>
+        <float n="8" alias="/engines/engine[0]/rpm"/>
+        <float n="9" alias="/engines/engine[1]/rpm"/>
+        <float n="10" alias="/engines/engine[2]/rpm"/>
+        <float n="11" alias="/engines/engine[3]/rpm"/>
+        <float n="12" alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="13" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="14" alias="/gear/gear[2]/rollspeed-ms"/>
+        <float n="15" alias="/gear/gear[3]/rollspeed-ms"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
       </generic>
     </multiplay>
 
-    <help>
-      <title>Short Stirling</title>
-      <key>
-        <name>d</name>
-        <desc>Open/Close bimb bay door</desc>
-      </key>
-    </help>
+    <help include="Systems/help.xml"/>
 
     <menubar include="Dialogs/stirling-menu.xml"/>
 
@@ -84,19 +90,19 @@
   <controls>
     <engines>
       <engine n="0">
-	<boost type="double">0</boost>
+        <boost type="double">0</boost>
         <magnetos>0</magnetos>
       </engine>
       <engine n="1">
-	<boost type="double">0</boost>
+        <boost type="double">0</boost>
         <magnetos>0</magnetos>
       </engine>
       <engine n="2">
-	<boost type="double">0</boost>
+        <boost type="double">0</boost>
         <magnetos>0</magnetos>
       </engine>
       <engine n="3">
-	<boost type="double">0</boost>
+        <boost type="double">0</boost>
         <magnetos>0</magnetos>
       </engine>
     </engines>
@@ -126,7 +132,7 @@
   </engines>
 
   <input>
-    <keyboard include="Nasal/stirling-keyboard.xml"/>
+    <keyboard include="Systems/stirling-keyboard.xml"/>
   </input>
  
   <nasal>
@@ -136,6 +142,11 @@
     <stirling>
       <file>Aircraft/Short-Stirling/Nasal/liveries.nas</file>
     </stirling>
+    <turrets>
+      <file>Aircraft/Short-Stirling/Nasal/turrets.nas</file>
+      <script>
+      </script>
+    </turrets>
   </nasal>
 
 </PropertyList>

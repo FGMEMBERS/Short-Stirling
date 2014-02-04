@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- New sounds kit by StuartC : http://www.fguk.co.nr/ -->
- 
 <PropertyList>
 
   <fx>
@@ -54,19 +53,18 @@
       <max-dist>1000</max-dist>
     </crank>
 
-    
     <engine> 
       <name>engine idle rpm</name>
       <mode>looped</mode>
       <path>Aircraft/Short-Stirling/Sounds/idle.wav</path>
       <condition> 
-        <property>/engines/engine/running</property>
+        <property>/engines/engine[0]/running</property>
         <less-than> 
-          <property>/engines/engine/rpm</property>
+          <property>/engines/engine[0]/rpm</property>
           <value>1500</value>
         </less-than>
         <greater-than> 
-          <property>/engines/engine/rpm</property>
+          <property>/engines/engine[0]/rpm</property>
           <value>150</value>
         </greater-than>
       </condition>
@@ -82,7 +80,7 @@
         <factor>-0.4</factor>
       </volume>
       <pitch> 
-        <property>/engines/engine/rpm</property>
+        <property>/engines/engine[0]/rpm</property>
         <factor>0.0009496</factor>
         <min>0.6</min>
         <max>2.0</max>
@@ -112,7 +110,7 @@
       </volume>
       <pitch>
         <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
+        <factor>0.00016</factor>
         <min>0.0</min>
         <max>1.0</max>
       </pitch>
@@ -173,13 +171,13 @@
       <mode>looped</mode>
       <path>Aircraft/Short-Stirling/Sounds/idle.wav</path>
       <condition> 
-        <property>/engines/engine/running</property>
+        <property>/engines/engine[1]/running</property>
         <less-than> 
-          <property>/engines/engine/rpm</property>
+          <property>/engines/engine[1]/rpm</property>
           <value>1500</value>
         </less-than>
         <greater-than> 
-          <property>/engines/engine/rpm</property>
+          <property>/engines/engine[1]/rpm</property>
           <value>150</value>
         </greater-than>
       </condition>
@@ -195,7 +193,7 @@
         <factor>-0.4</factor>
       </volume>
       <pitch> 
-        <property>/engines/engine/rpm</property>
+        <property>/engines/engine[1]/rpm</property>
         <factor>0.0009496</factor>
         <min>0.6</min>
         <max>2.0</max>
@@ -210,22 +208,22 @@
       <mode>looped</mode>
       <path>Aircraft/Short-Stirling/Sounds/ext-cruse.wav</path>
       <condition>
-        <property>/engines/engine[0]/running</property>
+        <property>/engines/engine[1]/running</property>
         <greater-than-equals>
-          <property>/engines/engine[0]/rpm</property>
+          <property>/engines/engine[1]/rpm</property>
           <value>1500</value>
         </greater-than-equals>
       </condition>
       <volume>
-        <property>/engines/engine[0]/rpm</property>
+        <property>/engines/engine[1]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.00</max>
         <offset>0.0</offset>
       </volume>
       <pitch>
-        <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
+        <property>/engines/engine[1]/rpm</property>
+        <factor>0.00016</factor>
         <min>0.0</min>
         <max>1.0</max>
       </pitch>
@@ -286,13 +284,13 @@
       <mode>looped</mode>
       <path>Aircraft/Short-Stirling/Sounds/idle.wav</path>
       <condition> 
-        <property>/engines/engine/running</property>
+        <property>/engines/engine[2]/running</property>
         <less-than> 
-          <property>/engines/engine/rpm</property>
+          <property>/engines/engine[2]/rpm</property>
           <value>1500</value>
         </less-than>
         <greater-than> 
-          <property>/engines/engine/rpm</property>
+          <property>/engines/engine[2]/rpm</property>
           <value>150</value>
         </greater-than>
       </condition>
@@ -308,7 +306,7 @@
         <factor>-0.4</factor>
       </volume>
       <pitch> 
-        <property>/engines/engine/rpm</property>
+        <property>/engines/engine[2]/rpm</property>
         <factor>0.0009496</factor>
         <min>0.6</min>
         <max>2.0</max>
@@ -323,22 +321,22 @@
       <mode>looped</mode>
       <path>Aircraft/Short-Stirling/Sounds/ext-cruse.wav</path>
       <condition>
-        <property>/engines/engine[0]/running</property>
+        <property>/engines/engine[2]/running</property>
         <greater-than-equals>
-          <property>/engines/engine[0]/rpm</property>
+          <property>/engines/engine[2]/rpm</property>
           <value>1500</value>
         </greater-than-equals>
       </condition>
       <volume>
-        <property>/engines/engine[0]/rpm</property>
+        <property>/engines/engine[2]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.00</max>
         <offset>0.0</offset>
       </volume>
       <pitch>
-        <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
+        <property>/engines/engine[2]/rpm</property>
+        <factor>0.00016</factor>
         <min>0.0</min>
         <max>1.0</max>
       </pitch>
@@ -399,13 +397,13 @@
       <mode>looped</mode>
       <path>Aircraft/Short-Stirling/Sounds/idle.wav</path>
       <condition> 
-        <property>/engines/engine/running</property>
+        <property>/engines/engine[3]/running</property>
         <less-than> 
-          <property>/engines/engine/rpm</property>
+          <property>/engines/engine[3]/rpm</property>
           <value>1500</value>
         </less-than>
         <greater-than> 
-          <property>/engines/engine/rpm</property>
+          <property>/engines/engine[3]/rpm</property>
           <value>150</value>
         </greater-than>
       </condition>
@@ -421,7 +419,7 @@
         <factor>-0.4</factor>
       </volume>
       <pitch> 
-        <property>/engines/engine/rpm</property>
+        <property>/engines/engine[3]/rpm</property>
         <factor>0.0009496</factor>
         <min>0.6</min>
         <max>2.0</max>
@@ -436,22 +434,22 @@
       <mode>looped</mode>
       <path>Aircraft/Short-Stirling/Sounds/ext-cruse.wav</path>
       <condition>
-        <property>/engines/engine[0]/running</property>
+        <property>/engines/engine[3]/running</property>
         <greater-than-equals>
-          <property>/engines/engine[0]/rpm</property>
+          <property>/engines/engine[3]/rpm</property>
           <value>1500</value>
         </greater-than-equals>
       </condition>
       <volume>
-        <property>/engines/engine[0]/rpm</property>
+        <property>/engines/engine[3]/rpm</property>
         <factor>0.00033</factor>
         <min>0.0</min>
         <max>1.00</max>
         <offset>0.0</offset>
       </volume>
       <pitch>
-        <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
+        <property>/engines/engine[3]/rpm</property>
+        <factor>0.00016</factor>
         <min>0.0</min>
         <max>1.0</max>
       </pitch>

@@ -4,6 +4,11 @@
 
   <path>stirling.ac</path>
 
+  <!-- MP sound call -->
+  <sound>
+    <path>Aircraft/Short-Stirling/Sounds/mp-sound.xml</path>
+  </sound>
+
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Short-Stirling/Models/Liveries", 10);
@@ -12,10 +17,10 @@
 
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -59,7 +64,10 @@
     <object-name>sousnez</object-name>
     <object-name>airs</object-name>
     <object-name>porteG</object-name>
+    <object-name>cargobayG</object-name>
+    <object-name>cargobayD</object-name>
 
+    <object-name>trous</object-name>
     <object-name>echappes</object-name>
     <object-name>roueA</object-name>
     <object-name>entreaxesG</object-name>
@@ -78,13 +86,17 @@
     <object-name>heliceGI</object-name>
     <object-name>heliceDI</object-name>
     <object-name>heliceDE</object-name>
-    <object-name>guns</object-name>
-    <object-name>trous</object-name>
+    <object-name>cables</object-name>
+    <object-name>gunsup</object-name>
+    <object-name>gunstail</object-name>
+    <object-name>gunsnoze</object-name>
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
+    <object-name>vitrestourellenoze</object-name>
+    <object-name>vitrestourelleup</object-name>
+    <object-name>vitrestourelletail</object-name>
     <object-name>vitreG</object-name>
-    <object-name>cables</object-name>
     <object-name>propblurGE</object-name>
     <object-name>propdiscGE</object-name>
     <object-name>propblurGI</object-name>
@@ -127,6 +139,8 @@
     <object-name>sousnez</object-name>
     <object-name>airs</object-name>
     <object-name>porteG</object-name>
+    <object-name>cargobayG</object-name>
+    <object-name>cargobayD</object-name>
 
     <object-name>echappes</object-name>
     <object-name>roueA</object-name>
@@ -146,45 +160,27 @@
     <object-name>heliceGI</object-name>
     <object-name>heliceDI</object-name>
     <object-name>heliceDE</object-name>
-    <object-name>guns</object-name>
     <object-name>trous</object-name>
+    <object-name>cables</object-name>
+    <object-name>gunsup</object-name>
+    <object-name>gunstail</object-name>
+    <object-name>gunsnoze</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>bossage</object-name>
     <object-name>ailes</object-name>
@@ -215,6 +211,47 @@
     <object-name>sousnez</object-name>
     <object-name>airs</object-name>
     <object-name>porteG</object-name>
+    <object-name>cargobayG</object-name>
+    <object-name>cargobayD</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>bossage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>porteGE</object-name>
+    <object-name>porteGI</object-name>
+    <object-name>porteDE</object-name>
+    <object-name>porteDI</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>moteursE</object-name>
+    <object-name>moteursI</object-name>
+    <object-name>bolGE</object-name>
+    <object-name>bolGI</object-name>
+    <object-name>bolDI</object-name>
+    <object-name>bolDE</object-name>
+    <object-name>tourvitres</object-name>
+    <object-name>tourelleavant</object-name>
+    <object-name>tourellecentre</object-name>
+    <object-name>tourellearriere</object-name>
+    <object-name>antennes</object-name>
+    <object-name>sousnez</object-name>
+    <object-name>airs</object-name>
+    <object-name>porteG</object-name>
+    <object-name>cargobayG</object-name>
+    <object-name>cargobayD</object-name>
   </effect>
 
   <animation>
@@ -223,13 +260,22 @@
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>vitres</object-name>
     <object-name>vitreG</object-name>
+    <object-name>vitrestourellenoze</object-name>
+    <object-name>vitrestourelleup</object-name>
+    <object-name>vitrestourelletail</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!--  REMBRANDT support for transparent objects-->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>vitres</object-name>
     <object-name>vitreG</object-name>
-    <object-name>cables</object-name>
+    <object-name>vitrestourellenoze</object-name>
+    <object-name>vitrestourelleup</object-name>
+    <object-name>vitrestourelletail</object-name>
     <object-name>propblurGE</object-name>
     <object-name>propdiscGE</object-name>
     <object-name>propblurGI</object-name>
@@ -238,7 +284,7 @@
     <object-name>propdiscGI</object-name>
     <object-name>propblurGE</object-name>
     <object-name>propdiscGE</object-name>
-  </animation>
+  </effect>
 
   <!-- Une ombre pour OSG en attendant Rembrandt -->
   <model>
@@ -420,6 +466,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceCompleteGE</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -485,6 +537,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceCompleteGI</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[1]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[1]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -550,6 +608,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceCompleteDI</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[2]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[2]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -615,6 +679,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceCompleteDE</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[3]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[3]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -1237,9 +1307,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>PorteGauche</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>rotate</type>
     <object-name>PorteGauche</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 170 </factor>
     <axis>
       <x1-m>  7.958 </x1-m>
@@ -1251,5 +1335,208 @@
     </axis>
   </animation>
 
-</PropertyList>
+  <!-- Ouverture soute à bombes -->
+  <animation>
+    <type>pick</type>
+    <object-name>cargobayG</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
 
+  <animation>
+    <type>rotate</type>
+    <object-name>cargobayG</object-name>
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <factor> -90 </factor>
+    <center>
+      <x-m> -9.68790 </x-m>
+      <y-m> -1.00000 </y-m>
+      <z-m> -1.17503 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>cargobayD</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cargobayD</object-name>
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <factor> 90 </factor>
+    <center>
+      <x-m> -9.68790 </x-m>
+      <y-m>  1.00000 </y-m>
+      <z-m> -1.17503 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Animation des tourelles -->
+  <!-- Tourelle de toit -->
+  <animation>
+    <name>TourelleUp</name>
+    <object-name>tourellecentre</object-name>
+    <object-name>vitrestourelleup</object-name>
+    <object-name>gunsup</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TourelleUp</object-name>
+    <property>sim/model/turret[0]/heading</property>
+    <offset-deg> 180 </offset-deg>
+    <center>
+      <x-m> 1.41522 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 1.26094 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>TourelleUpGuns</name>
+    <object-name>gunsup</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TourelleUpGuns</object-name>
+    <property>sim/model/turret[0]/pitch</property>
+    <factor> -1 </factor>
+    <center>
+      <x-m> 1.41522 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 1.26094 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Tourelle de queue -->
+  <animation>
+    <name>TourelleTail</name>
+    <object-name>tourellearriere</object-name>
+    <object-name>vitrestourelletail</object-name>
+    <object-name>gunstail</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TourelleTail</object-name>
+    <property>sim/model/turret[1]/heading</property>
+    <offset-deg> 180 </offset-deg>
+    <center>
+      <x-m> 12.70838 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.47887 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>TourelleTailGuns</name>
+    <object-name>gunstail</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TourelleTailGuns</object-name>
+    <property>sim/model/turret[1]/pitch</property>
+    <factor> -1 </factor>
+    <center>
+      <x-m> 12.70838 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.47887 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Tourelle de nez -->
+  <animation>
+    <name>TourelleNoze</name>
+    <object-name>tourelleavant</object-name>
+    <object-name>vitrestourellenoze</object-name>
+    <object-name>gunsnoze</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TourelleNoze</object-name>
+    <property>sim/model/turret[2]/heading</property>
+    <center>
+      <x-m> -12.76742 </x-m>
+      <y-m>   0.00000 </y-m>
+      <z-m>  -0.21158 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <name>TourelleNozeGuns</name>
+    <object-name>gunsnoze</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TourelleNozeGuns</object-name>
+    <property>sim/model/turret[2]/pitch</property>
+    <factor> 1 </factor>
+    <center>
+      <x-m> -12.76742 </x-m>
+      <y-m>   0.00000 </y-m>
+      <z-m>  -0.21158 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

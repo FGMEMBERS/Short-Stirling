@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -13,16 +13,23 @@
   </animation>
 
   <animation>
-    <type>noshadow</type>
-    <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
     <type>shader</type>
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>vitre</object-name>
   </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
 
   <animation>
     <type>material</type>
@@ -42,24 +49,20 @@
     <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
     <interpolation> 
       <entry><ind>   0.00 </ind><dep>   0 </dep></entry> 
-      <entry><ind>  52.14 </ind><dep>  10 </dep></entry>
-      <entry><ind>  69.52 </ind><dep>  30 </dep></entry>
-      <entry><ind>  86.90 </ind><dep>  50 </dep></entry>
-      <entry><ind> 104.28 </ind><dep>  90 </dep></entry>
-      <entry><ind> 121.66 </ind><dep> 130 </dep></entry>
-      <entry><ind> 139.04 </ind><dep> 170 </dep></entry>
-      <entry><ind> 156.41 </ind><dep> 210 </dep></entry>
-      <entry><ind> 173.79 </ind><dep> 250 </dep></entry>
-      <entry><ind> 191.17 </ind><dep> 290 </dep></entry>
-      <entry><ind> 208.55 </ind><dep> 330 </dep></entry>
-      <entry><ind> 225.93 </ind><dep> 365 </dep></entry>
-      <entry><ind> 243.31 </ind><dep> 400 </dep></entry>
-      <entry><ind> 260.69 </ind><dep> 435 </dep></entry>
-      <entry><ind> 278.07 </ind><dep> 470 </dep></entry>
-      <entry><ind> 295.45 </ind><dep> 505 </dep></entry>
-      <entry><ind> 312.83 </ind><dep> 540 </dep></entry>
-      <entry><ind> 330.21 </ind><dep> 575 </dep></entry>
-      <entry><ind> 347.59 </ind><dep> 610 </dep></entry>
+      <entry><ind>  52.14 </ind><dep>  54 </dep></entry> <!--  60 kt -->
+      <entry><ind>  69.52 </ind><dep>  89 </dep></entry> <!--  80 kt -->
+      <entry><ind>  86.90 </ind><dep> 130 </dep></entry> <!-- 100 kt -->
+      <entry><ind> 104.28 </ind><dep> 171 </dep></entry> <!-- 120 kt -->
+      <entry><ind> 121.66 </ind><dep> 215 </dep></entry> <!-- 140 kt -->
+      <entry><ind> 139.04 </ind><dep> 256 </dep></entry> <!-- 160 kt -->
+      <entry><ind> 156.41 </ind><dep> 301 </dep></entry> <!-- 180 kt -->
+      <entry><ind> 173.79 </ind><dep> 343 </dep></entry> <!-- 200 kt -->
+      <entry><ind> 191.17 </ind><dep> 381 </dep></entry> <!-- 220 kt -->
+      <entry><ind> 208.55 </ind><dep> 423 </dep></entry> <!-- 240 kt -->
+      <entry><ind> 225.93 </ind><dep> 465 </dep></entry> <!-- 260 kt -->
+      <entry><ind> 243.31 </ind><dep> 507 </dep></entry> <!-- 280 kt -->
+      <entry><ind> 260.69 </ind><dep> 548 </dep></entry> <!-- 300 kt -->
+      <entry><ind> 278.07 </ind><dep> 589 </dep></entry> <!-- 320 kt -->
     </interpolation>
     <axis>
       <x> -1 </x>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -14,11 +14,13 @@
     <condition>
       <and>
         <greater-than>
-          <property>engines/engine[1]/rpm</property>
+          <!-- engines/engine[1]/rpm -->
+          <property>sim/multiplay/generic/float[9]</property>
           <value>30</value>
         </greater-than>
         <equals>
-          <property>engines/engine[1]/cranking</property>
+          <!-- engines/engine[1]/cranking -->
+          <property>sim/multiplay/generic/float[5]</property>
           <value>true</value>
         </equals>
       </and>
@@ -98,4 +100,3 @@
   </particlesystem>
 
 </PropertyList>
-

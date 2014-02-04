@@ -7,7 +7,7 @@ name "bloc"
 loc 0 0 -0
 data 4
 bloc
-texture "colors.png"
+texture "engine.png"
 texrep 1 1
 crease 30.000001
 numvert 515
@@ -4245,7 +4245,7 @@ name "echappes"
 loc 0 0 -0
 data 8
 echappes
-texture "colors.png"
+texture "engine.png"
 texrep 1 1
 crease 30.000001
 numvert 1408
@@ -12384,7 +12384,7 @@ name "moteurlow"
 loc 0 0 -0
 data 9
 moteurlow
-texture "colors.png"
+texture "engine.png"
 texrep 1 1
 crease 30.000001
 numvert 13850

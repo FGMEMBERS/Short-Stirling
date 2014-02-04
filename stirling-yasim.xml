@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Short Stirling BARANGER Emmanuel (2010) 
             updated StuartC (2012)
@@ -135,7 +135,7 @@
                  Displacement      : 2360 in3 (38.7 L)
   -->
     <!-- Engine left exterior-->
-    <propeller x="7.369" y="7.939" z="0.372"
+    <propeller x="7.069" y="7.939" z="0.372"
                mass="1929"
                moment="50"
                radius="2.1"
@@ -159,7 +159,7 @@
     </propeller>
 
     <!-- Engine left interior-->
-    <propeller x="7.993" y="3.910" z="-0.014"
+    <propeller x="7.693" y="3.910" z="-0.014"
                mass="1929"
                moment="50"
                radius="2.1"
@@ -183,7 +183,7 @@
     </propeller>
 
     <!-- Engine right interior-->
-    <propeller x="7.993" y="-3.910" z="-0.014"
+    <propeller x="7.693" y="-3.910" z="-0.014"
                mass="1929"
                moment="50"
                radius="2.1"
@@ -207,7 +207,7 @@
     </propeller>
 
     <!-- Engine right exterior-->
-    <propeller x="7.369" y="-7.939" z="0.372"
+    <propeller x="7.069" y="-7.939" z="0.372"
                mass="1929"
                moment="50"
                radius="2.1"
@@ -272,8 +272,8 @@
           <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
     </gear>
 
-    <tank x="2.466" y="4.817" z="0.436" capacity="2000"/>
-    <tank x="2.466" y="-4.817" z="0.436" capacity="2000"/>
+    <tank x="2.466" y=" 4.817" z="0.136" capacity="2000"/>
+    <tank x="2.466" y="-4.817" z="0.136" capacity="2000"/>
 
     <!-- Mass displacment -->
     <ballast x="4" y="0" z="-9" mass="9000"/>

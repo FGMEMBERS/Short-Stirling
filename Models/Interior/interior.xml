@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -7,6 +7,7 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
+    <object-name>cloisons</object-name>
     <object-name>inttour</object-name>
     <object-name>inttourvitres</object-name>
     <object-name>intsousnez</object-name>
@@ -15,15 +16,16 @@
     <object-name>inttourellearriere</object-name>
     <object-name>intporteG</object-name>
     <object-name>inttourporteG</object-name>
+    <object-name>intcargobayG</object-name>
+    <object-name>intcargobayD</object-name>
+    <object-name>table</object-name>
+    <object-name>seat</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
-    <object-name>intvitreG</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>intvitres</object-name>
+    <object-name>intvitresup</object-name>
+    <object-name>intvitrestail</object-name>
+    <object-name>intvitresnoze</object-name>
     <object-name>intvitreG</object-name>
   </animation>
 
@@ -31,16 +33,35 @@
     <type>shader</type>
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>intvitres</object-name>
     <object-name>intvitreG</object-name>
+    <object-name>intvitresup</object-name>
+    <object-name>intvitrestail</object-name>
+    <object-name>intvitresnoze</object-name>
   </animation>
+
+  <!--  REMBRANDT support for transparent objects-->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreG</object-name>
+    <object-name>intvitresup</object-name>
+    <object-name>intvitrestail</object-name>
+    <object-name>intvitresnoze</object-name>
+  </effect> 
 
   <!-- Pilote -->
   <model>
     <path>Aircraft/Short-Stirling/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -9.699 </x-m>
-      <y-m> -0.296 </y-m>
+      <y-m> -0.396 </y-m>
       <z-m>  0.784 </z-m>
     </offsets>
   </model>
@@ -75,6 +96,141 @@
       <x2-m>  7.837 </x2-m>
       <y2-m> -0.812 </y2-m>
       <z2-m>  0.350 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Ouverture soute à bombes -->
+  <animation>
+    <type>pick</type>
+    <object-name>intcargobayG</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>intcargobayG</object-name>
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <factor> -90 </factor>
+    <center>
+      <x-m> -9.68790 </x-m>
+      <y-m> -1.00000 </y-m>
+      <z-m> -1.17503 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>intcargobayD</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>intcargobayD</object-name>
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <factor> 90 </factor>
+    <center>
+      <x-m> -9.68790 </x-m>
+      <y-m>  1.00000 </y-m>
+      <z-m> -1.17503 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Animation des tourelles -->
+  <!-- Tourelle de toit -->
+  <animation>
+    <name>IntTourelleUp</name>
+    <object-name>inttourellecentre</object-name>
+    <object-name>intvitresup</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntTourelleUp</object-name>
+    <property>sim/model/turret[0]/heading</property>
+    <offset-deg> 180 </offset-deg>
+    <center>
+      <x-m> 1.41522 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 1.26094 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <!-- Tourelle de queue -->
+  <animation>
+    <name>IntTourelleTail</name>
+    <object-name>inttourellearriere</object-name>
+    <object-name>intvitrestail</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntTourelleTail</object-name>
+    <property>sim/model/turret[1]/heading</property>
+    <offset-deg> 180 </offset-deg>
+    <center>
+      <x-m> 12.70838 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.47887 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <!-- Tourelle de nez -->
+  <animation>
+    <name>IntTourelleNoze</name>
+    <object-name>inttourelleavant</object-name>
+    <object-name>intvitresnoze</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntTourelleNoze</object-name>
+    <property>sim/model/turret[2]/heading</property>
+    <center>
+      <x-m> -12.76742 </x-m>
+      <y-m>   0.00000 </y-m>
+      <z-m>  -0.21158 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 

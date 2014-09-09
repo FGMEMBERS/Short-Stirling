@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList> 
+
+  <path>contact.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fond</object-name>
+    <object-name>base</object-name>
+    <object-name>Switch1.1</object-name>
+    <object-name>Switch1.2</object-name>
+    <object-name>Switch2.1</object-name>
+    <object-name>Switch2.2</object-name>
+    <object-name>Switch3.1</object-name>
+    <object-name>Switch3.2</object-name>
+    <object-name>Switch4.1</object-name>
+    <object-name>Switch4.2</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <animation> 
+    <type>material</type>
+    <object-name>base</object-name>
+    <object-name>Switch1.1</object-name>
+    <object-name>Switch1.2</object-name>
+    <object-name>Switch2.1</object-name>
+    <object-name>Switch2.2</object-name>
+    <object-name>Switch3.1</object-name>
+    <object-name>Switch3.2</object-name>
+    <object-name>Switch4.1</object-name>
+    <object-name>Switch4.2</object-name>
+    <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <!--
+  <animation>
+    <type>pick</type>
+    <object-name>Switch1.1</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/gear/gear-down</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>Switch1.1</object-name>
+    <property>gear/gear[0]/position-norm</property>
+    <factor> 180 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  -->
+</PropertyList>

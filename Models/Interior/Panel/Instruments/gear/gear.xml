@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList> 
+
+  <path>gear.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fond</object-name>
+    <object-name>gearup</object-name>
+    <object-name>geardown</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>gearup</object-name>
+    <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.95 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>geardown</object-name>
+    <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.95 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+
+  <!-- Stbd locked down -->
+  <animation>
+    <type>select</type>
+    <object-name>gearup</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- Stbd locked up -->
+  <animation>
+    <type>select</type>
+    <object-name>geardown</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+</PropertyList>

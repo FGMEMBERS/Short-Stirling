@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- No. 7 Squadron RAF Stirling Mk I. based at Oakington, Cambridgeshire, UK July 1941. Serial N3641 'D'. -->
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">7 Sqn 'D' RAF 1941</name>
+        <texture>Liveries/7_sqn_D_raf.png</texture>
+<!--
+        <diffuse>
+          <red>   0.5 </red>
+          <green> 0.5 </green>
+          <blue>  0.5 </blue>
+        </diffuse>
+
+        <ambient>
+          <red>   0.5 </red>
+          <green> 0.5 </green>
+          <blue>  0.5 </blue>
+        </ambient>
+-->
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+
+        <emission>
+          <red>   0.2 </red>
+          <green> 0.2 </green>
+          <blue>  0.2 </blue>
+        </emission>
+<!--
+        <transparency>
+          <alpha> 0.0 </alpha>
+        </transparency>
+
+        <shininess>10</shininess>
+-->
+      </livery>
+    </model>
+  </sim>
+</PropertyList>

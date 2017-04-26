@@ -9,6 +9,20 @@
     <flight-model>yasim</flight-model>
     <aero>stirling-yasim</aero>
 
+    <tags>
+      <tag>short stirling (yasim)</tag>
+      <tag>short</tag>
+      <tag>low-wing</tag>
+      <tag>tail-dragger</tag>
+     <tag>bomber</tag>
+      <tag>retractable-gear</tag>
+      <tag>four-engine</tag>
+      <tag>piston</tag>
+      <tag>propeller</tag>
+     <tag>1940s</tag>
+     <tag>ww2</tag>
+    </tags>
+
     <rating>
       <FDM type="int">     2 </FDM>
       <systems type="int"> 1 </systems>
